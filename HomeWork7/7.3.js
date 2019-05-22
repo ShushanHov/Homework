@@ -30,16 +30,34 @@ class Person{
         this._age=value;
     }
     toString(){
-        return `This is person with name - ${this.firstName} and last name -${this.lastName}`;
+        return `This is a person with name - ${this._firstName} and last name - ${this._lastName}`;
     }
     
 }
 class Student extends Person{
     constructor(firstName, lastName,gender, age, programs, year, fee){
         super(firstName, lastName,gender, age);
-        this.programs=programs;
-        this.year=year;
-        this.fee=fee;
+        this._programs=programs;
+        this._year=year;
+        this._fee=fee;
+    }
+    get programs(){
+        return this._programs;
+    }
+    set programs (value){
+        this._programs=value;
+    }
+    get year (){
+        return this._year;
+    }
+    set year(vaue){
+        this._year=value;
+    }
+    get fee(){
+        return this._fee;
+    }
+    set fee(value){
+        this._fee=value;
     }
     passExam(program,grade){
         if (this.programs.indexOf(program)===-1) return 'Invalid Program';
@@ -50,11 +68,29 @@ class Student extends Person{
             }
         }
     }
+    toString(){
+        return `This student studies in  ${this._year} year`;
+    }
 }
 class Teacher extends Person{
-    constructor(firstName,lastName,gender,age,programs,pay){
+    constructor(firstName,lastName,gender,age,program,pay){
         super(firstName,lastName,gender,age);
-        this.programs=programs;
+        this._program=program;
         this.pay=pay;
+    }
+    get program(){
+        return this.program;
+    }
+    set program(value){
+        this.program=value;
+    }
+    get pay(){
+        return this._pay;
+    }
+    set pay(value){
+        this._pay=value;
+    }
+    toString (){
+        return `This Teacher subject is ${this._program}`;
     }
 }
