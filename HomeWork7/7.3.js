@@ -50,7 +50,7 @@ class Student extends Person{
     get year (){
         return this._year;
     }
-    set year(vaue){
+    set year(value){
         this._year=value;
     }
     get fee(){
@@ -76,13 +76,13 @@ class Teacher extends Person{
     constructor(firstName,lastName,gender,age,program,pay){
         super(firstName,lastName,gender,age);
         this._program=program;
-        this.pay=pay;
+        this._pay=pay;
     }
     get program(){
-        return this.program;
+        return this._program;
     }
     set program(value){
-        this.program=value;
+        this._program=value;
     }
     get pay(){
         return this._pay;
@@ -91,6 +91,6 @@ class Teacher extends Person{
         this._pay=value;
     }
     toString (){
-        return `This Teacher subject is ${this._program}`;
+        return `This Teacher's subject is ${this._program}`;
     }
 }
