@@ -56,6 +56,6 @@ class Book extends Author{
         else return `Invalid price or quantity`;
     }
     toString(){
-        return `This book: ${this._title} was writen by ${name}`;
+        return `This book: ${this._title} was written by ${this.name}`;
     }
 }
